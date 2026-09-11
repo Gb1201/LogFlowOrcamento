@@ -10,37 +10,43 @@ export const SERVICES = [
   {
     id: 'institucional',
     title: 'Site institucional',
-    audience: 'Para empresas e profissionais que precisam de presença oficial online.',
-    goal: 'Apresentar quem você é, o que faz e por que merece confiança, com uma estrutura clara para quem chega até seu negócio pela primeira vez.',
+    audience: 'Para empresas e profissionais que precisam de uma presença oficial e profissional na internet.',
+    goal: 'Apresentar sua empresa, serviços, diferenciais e formas de contato com uma estrutura clara, profissional e alinhada à identidade da marca.',
     includes: [
       'Páginas de apresentação, serviços e contato',
       'Estrutura pensada para SEO local',
       'Formulário ou canal direto de contato',
     ],
   },
+
   {
     id: 'landing-page',
     title: 'Landing page',
-    audience: 'Para campanhas, lançamentos ou um único produto ou serviço.',
-    goal: 'Levar o visitante a uma ação específica — comprar, agendar ou se cadastrar — sem distrações pelo caminho.',
+    audience: 'Para campanhas, lançamentos, divulgação de produtos, serviços ou captação de clientes.',
+    goal: 'Criar uma página objetiva e estratégica, desenvolvida para apresentar uma oferta e conduzir o visitante a uma ação específica, como entrar em contato, solicitar um orçamento ou acessar um canal de atendimento.',
     includes: [
-      'Foco total em uma única conversão',
-      'Copy e hierarquia visual orientadas a ação',
-      'Estrutura otimizada para tráfego pago e redes sociais',
+      'Página única com foco em uma oferta ou objetivo específico',
+      'Copy e hierarquia visual orientadas à conversão',
+      'Botões e chamadas para ação, como WhatsApp e formulário de contato',
+      'Estrutura otimizada para campanhas, tráfego pago e redes sociais',
+      'Desenvolvimento exclusivamente Front-end, sem sistema de negócio próprio, painel administrativo ou banco de dados',
     ],
   },
+
   {
     id: 'portfolio',
     title: 'Portfólio profissional',
-    audience: 'Para criativos, freelancers e profissionais liberais.',
-    goal: 'Mostrar trabalho real com contexto — não apenas uma galeria de imagens, mas uma vitrine que explica o processo por trás de cada projeto.',
+    audience: 'Para criativos, freelancers e profissionais liberais que querem apresentar seus trabalhos de forma profissional.',
+    goal: 'Mostrar trabalhos e projetos com contexto, organização e identidade visual — transformando seu portfólio em uma vitrine profissional para conquistar novas oportunidades.',
     includes: [
       'Organização por projeto ou categoria',
-      'Espaço para processo, não só resultado final',
+      'Espaço para processo, contexto e resultados',
+      'Apresentação profissional dos trabalhos',
       'Chamada direta para contato com clientes em potencial',
     ],
   },
 ]
+
 
 export const DIFFERENTIALS = [
   {

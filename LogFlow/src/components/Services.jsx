@@ -10,7 +10,7 @@ export function Services() {
             Três formatos. Um único padrão de qualidade.
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-forest/65">
-            Cada projeto começa do que ele precisa fazer — não de um pacote
+            Cada projeto começa do que ele precisa fazer, não de um pacote
             fechado. Veja onde o seu se encaixa.
           </p>
         </div>

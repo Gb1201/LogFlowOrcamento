@@ -29,17 +29,17 @@ export function Hero() {
           </div>
 
           <h1 className="font-display text-[42px] leading-[1.08] font-semibold tracking-tight text-linen sm:text-6xl lg:text-[64px]">
-            Seu site não deveria
+            Transforme sua ideia
             <br />
-            parecer com o de
+            em presença
             <br />
-            <span className="text-citron">todo mundo.</span>
+            <span className="text-citron">digital.</span>
           </h1>
 
           <p className="mt-7 max-w-lg text-[17px] leading-relaxed text-linen/70">
             Desenvolvo sites institucionais, landing pages e portfólios sob
             medida para empresas, profissionais liberais e criativos que
-            precisam de uma presença online que pareça — e funcione — como um
+            precisam de uma presença online que pareça, e funcione, como um
             produto profissional, não como um template preenchido.
           </p>
 
