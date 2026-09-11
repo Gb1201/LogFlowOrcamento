@@ -4,8 +4,8 @@ import { FinalCta } from './components/FinalCta'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Faq } from './components/Faq'
 import { HowItWorks } from './components/HowItWorks'
-import { Portfolio } from './components/Portfolio'
 import { Services } from './components/Services'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Services />
         <Differentials />
         <HowItWorks />
-        <Portfolio />
+        <Faq />
         <BudgetForm />
         <FinalCta />
       </main>

@@ -20,10 +20,10 @@ export function HowItWorks() {
               {index < PROCESS_STEPS.length - 1 && (
                 <span
                   aria-hidden="true"
-                  className="absolute top-[19px] left-[calc(100%-1rem)] hidden h-px w-[calc(100%-1.5rem)] bg-linen/15 lg:block"
+                  className="absolute top-5 left-10 right-0 z-0 hidden h-px -translate-y-1/2 bg-linen/15 lg:block"
                 />
               )}
-              <span className="font-display flex h-10 w-10 shrink-0 items-center justify-center border border-citron/50 text-sm text-citron">
+              <span className="font-display relative z-10 flex h-10 w-10 shrink-0 items-center justify-center border border-citron/50 bg-forest text-sm text-citron">
                 {index + 1}
               </span>
               <h3 className="font-display mt-5 text-lg font-medium text-linen">

@@ -3,16 +3,6 @@ import { DIFFERENTIALS } from '../data/content'
 
 const ICONS = [Ruler, Palette, Smartphone, Zap, Code2, MessageCircle]
 
-// Spans variam para quebrar a grade de cards idênticos.
-const SPANS = [
-  'lg:col-span-4 lg:row-span-2',
-  'lg:col-span-2',
-  'lg:col-span-2',
-  'lg:col-span-3',
-  'lg:col-span-3',
-  'lg:col-span-6',
-]
-
 export function Differentials() {
   return (
     <section id="diferenciais" className="dark-surface bg-pine py-24 sm:py-32">
@@ -27,13 +17,13 @@ export function Differentials() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-3 lg:grid-cols-6 lg:auto-rows-[140px]">
+        <div className="mt-16 grid gap-3 lg:grid-cols-3">
           {DIFFERENTIALS.map((item, index) => {
             const Icon = ICONS[index]
             return (
               <div
                 key={item.title}
-                className={`flex flex-col justify-between border border-linen/10 bg-forest/30 p-6 transition-colors duration-300 hover:border-citron/50 hover:bg-forest/50 ${SPANS[index]}`}
+                className="flex flex-col gap-6 border border-linen/10 bg-forest/30 p-6 transition-colors duration-300 hover:border-citron/50 hover:bg-forest/50"
               >
                 <Icon size={22} strokeWidth={1.75} className="text-citron" />
                 <div>

@@ -117,6 +117,33 @@ export const PORTFOLIO_PLACEHOLDERS = [
   },
 ]
 
+export const FAQ_ITEMS = [
+  {
+    question: 'Quanto tempo leva para o site ficar pronto?',
+    answer: 'Depende do tipo e da complexidade do projeto. Uma landing page costuma levar de 1 a 2 semanas, enquanto um site institucional ou portfólio pode levar de 2 a 4 semanas. O prazo exato é definido na proposta, após entender o escopo do projeto.',
+  },
+  {
+    question: 'Como funciona o pagamento?',
+    answer: 'Normalmente divido em duas partes: um valor de entrada para iniciar o desenvolvimento e o restante na entrega do projeto. As condições ficam combinadas na proposta, antes de começar.',
+  },
+  {
+    question: 'Eu preciso enviar os textos e imagens do site?',
+    answer: 'O ideal é que você envie os textos, imagens e materiais da marca que já tiver. Caso falte algo, posso ajudar a organizar o conteúdo ou indicar bancos de imagens, mas a produção de conteúdo original (como fotos profissionais ou redação) não está incluída por padrão.',
+  },
+  {
+    question: 'O site funciona bem no celular?',
+    answer: 'Sim. Todo projeto é desenvolvido pensando em desktop, tablet e celular como experiências próprias, não apenas versões reduzidas da tela grande.',
+  },
+  {
+    question: 'Depois de pronto, consigo fazer alterações no site sozinho?',
+    answer: 'Depende do tipo de projeto. Sites institucionais e portfólios podem incluir um painel simples de edição de conteúdo, caso solicitado na proposta. Landing pages, por padrão, são desenvolvidas apenas em Front-end, sem painel administrativo.',
+  },
+  {
+    question: 'Você oferece suporte após a entrega?',
+    answer: 'Sim. Após a entrega, fico disponível para ajustes pontuais e correções. Alterações maiores de escopo ou novas funcionalidades são orçadas separadamente.',
+  },
+]
+
 export const PROJECT_TYPES = ['Institucional', 'Landing page', 'Portfólio', 'Outro']
 
 export const BUDGET_RANGES = [
