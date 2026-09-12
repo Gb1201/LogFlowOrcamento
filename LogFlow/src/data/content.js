@@ -148,10 +148,7 @@ export const PROJECT_TYPES = ['Institucional', 'Landing page', 'Portfólio', 'Ou
 
 export const BUDGET_RANGES = [
   'Prefiro conversar sobre valores',
-  'Até R$ 1.500',
-  'R$ 1.500 – R$ 3.000',
-  'R$ 3.000 – R$ 6.000',
-  'Acima de R$ 6.000',
+  'Até R$ 1.000',
 ]
 
 export const TIMELINE_OPTIONS = [
