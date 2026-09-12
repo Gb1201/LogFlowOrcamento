@@ -8,7 +8,7 @@ import { Button } from './ui/Button'
 import { SelectField, TextAreaField, TextField } from './ui/FormField'
 
 const STEPS = ['dados', 'projeto', 'envio']
-const STEP_LABELS = ['01_dados.md', '02_projeto.md', '03_envio.md']
+const STEP_LABELS = ['Dados', 'Projeto', 'Envio']
 
 const INITIAL_DATA = {
   name: '',

@@ -136,7 +136,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Depois de pronto, consigo fazer alterações no site sozinho?',
-    answer: 'Depende do tipo de projeto. Sites institucionais e portfólios podem incluir um painel simples de edição de conteúdo, caso solicitado na proposta. Landing pages, por padrão, são desenvolvidas apenas em Front-end, sem painel administrativo.',
+    answer: 'Todo código ficará em um site de hospedagem, em caso de adicionar alterações será feita uma cobrança individual.',
   },
   {
     question: 'Você oferece suporte após a entrega?',

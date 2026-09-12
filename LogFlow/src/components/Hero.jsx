@@ -24,7 +24,7 @@ export function Hero() {
           <div className="mb-8 flex items-center gap-3 text-pine-light">
             <LogoMark className="h-6 w-6" animated />
             <span className="font-mark text-xs tracking-wide text-linen/50">
-              LogFlow / sites sob medida
+              LogFlow / Criações de sites profissionais
             </span>
           </div>
 
