@@ -14,27 +14,33 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <ol className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0">
-          {PROCESS_STEPS.map((step, index) => (
-            <li key={step.title} className="relative flex flex-col lg:px-5 lg:first:pl-0 lg:last:pr-0">
-              {index < PROCESS_STEPS.length - 1 && (
-                <span
-                  aria-hidden="true"
-                  className="absolute top-5 left-10 right-0 z-0 hidden h-px -translate-y-1/2 bg-linen/15 lg:block"
-                />
-              )}
-              <span className="font-display relative z-10 flex h-10 w-10 shrink-0 items-center justify-center border border-citron/50 bg-forest text-sm text-citron">
-                {index + 1}
-              </span>
-              <h3 className="font-display mt-5 text-lg font-medium text-linen">
-                {step.title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-linen/60">
-                {step.description}
-              </p>
-            </li>
-          ))}
-        </ol>
+        <div className="relative mt-16">
+          {/* Uma única linha, posicionada pela fração de cada coluna — o centro
+              do primeiro círculo fica em 1/10 da largura, o do último em 9/10,
+              então a linha vai de 10% a 90%. Não depende do padding de cada
+              item, então não desalinha com o primeiro/último elemento. */}
+          <span
+            aria-hidden="true"
+            className="absolute top-5 hidden h-px bg-linen/15 lg:block"
+            style={{ left: 'calc(100% / 10)', right: 'calc(100% / 10)' }}
+          />
+
+          <ol className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-0">
+            {PROCESS_STEPS.map((step, index) => (
+              <li key={step.title} className="relative flex flex-col lg:px-5">
+                <span className="font-display relative flex h-10 w-10 shrink-0 items-center justify-center border border-citron/50 bg-forest text-sm text-citron">
+                  {index + 1}
+                </span>
+                <h3 className="font-display mt-5 text-lg font-medium text-linen">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-linen/60">
+                  {step.description}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   )

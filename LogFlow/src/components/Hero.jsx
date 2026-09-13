@@ -59,8 +59,8 @@ export function Hero() {
               <dd className="mt-1 font-display text-sm text-linen/85">Sob medida</dd>
             </div>
             <div>
-              <dt className="font-mark text-[11px] text-linen/45">código</dt>
-              <dd className="mt-1 font-display text-sm text-linen/85">Limpo e leve</dd>
+              <dt className="font-mark text-[11px] text-linen/45">entrega</dt>
+              <dd className="mt-1 font-display text-sm text-linen/85">Prazo combinado</dd>
             </div>
             <div>
               <dt className="font-mark text-[11px] text-linen/45">contato</dt>
@@ -69,24 +69,19 @@ export function Hero() {
           </dl>
         </div>
 
-        <BudgetPreviewPanel />
+        <SitePreviewPanel />
       </div>
     </section>
   )
 }
 
 /**
- * Painel decorativo em estilo editor de código — reforça o posicionamento
- * "desenvolvedor" da marca em vez de uma ilustração genérica ou gradiente.
+ * Painel decorativo: um mockup de navegador com um site sendo montado peça
+ * por peça (menu, título, botão, cards). Comunica "um site sendo construído
+ * para você" de forma direta, sem jargão técnico, com uma animação de
+ * entrada que dá vida à seção.
  */
-function BudgetPreviewPanel() {
-  const rows = [
-    { key: 'servico', value: '"site sob medida"' },
-    { key: 'para', value: '"o seu projeto"' },
-    { key: 'prazo', value: '"combinado com você"' },
-    { key: 'orcamento', value: '"sem burocracia"' },
-  ]
-
+function SitePreviewPanel() {
   return (
     <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
       <div className="absolute -inset-3 -z-10 border border-pine-light/25" aria-hidden="true" />
@@ -95,19 +90,61 @@ function BudgetPreviewPanel() {
           <span className="h-2.5 w-2.5 rounded-full bg-linen/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-linen/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-citron/70" />
-          <span className="font-mark ml-2 text-[11px] text-linen/40">orcamento.json</span>
+          <span className="ml-2 flex-1 truncate rounded-[2px] bg-forest/60 px-3 py-1 text-[11px] text-linen/35">
+            seunegocio
+          </span>
         </div>
-        <div className="font-mark px-6 py-8 text-[13.5px] leading-loose">
-          <p className="text-linen/40">{'{'}</p>
-          {rows.map((row, i) => (
-            <p key={row.key} className="pl-4">
-              <span className="text-citron">"{row.key}"</span>
-              <span className="text-linen/40">: </span>
-              <span className="text-pine-light">{row.value}</span>
-              {i < rows.length - 1 && <span className="text-linen/40">,</span>}
-            </p>
-          ))}
-          <p className="text-linen/40">{'}'}</p>
+
+        <div className="px-6 py-7" aria-hidden="true">
+          <div className="flex items-center justify-between">
+            <span
+              className="hero-mock-fade h-3 w-3 rounded-[2px] bg-citron"
+              style={{ animationDelay: '0.05s' }}
+            />
+            <div className="flex gap-3">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="hero-mock-bar h-1.5 w-6 rounded-full bg-linen/20"
+                  style={{ animationDelay: `${0.15 + i * 0.05}s` }}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-9 space-y-3">
+            <span
+              className="hero-mock-bar block h-3.5 w-[78%] rounded-sm bg-linen/70"
+              style={{ animationDelay: '0.3s' }}
+            />
+            <span
+              className="hero-mock-bar block h-3.5 w-[52%] rounded-sm bg-linen/70"
+              style={{ animationDelay: '0.4s' }}
+            />
+            <span
+              className="hero-mock-bar block h-2 w-[85%] rounded-sm bg-linen/20"
+              style={{ animationDelay: '0.5s' }}
+            />
+          </div>
+
+          <span
+            className="hero-mock-cta mt-6 inline-block h-8 w-28 rounded-[3px] bg-citron"
+            style={{ animationDelay: '0.6s' }}
+          />
+
+          <div className="mt-9 grid grid-cols-3 gap-3">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="hero-mock-fade border border-linen/10 p-3"
+                style={{ animationDelay: `${0.7 + i * 0.1}s` }}
+              >
+                <span className="block h-4 w-4 rounded-[2px] bg-pine-light/70" />
+                <span className="mt-3 block h-1.5 w-full rounded-full bg-linen/20" />
+                <span className="mt-1.5 block h-1.5 w-2/3 rounded-full bg-linen/15" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const LINKS = [
   { href: '#servicos', label: 'Serviços' },
   { href: '#diferenciais', label: 'Diferenciais' },
   { href: '#processo', label: 'Como funciona' },
-  { href: '#portfolio', label: 'Portfólio' },
+  { href: '#faq', label: 'FAQ' },
 ]
 
 export function Header() {
