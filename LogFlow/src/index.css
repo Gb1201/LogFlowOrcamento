@@ -73,6 +73,67 @@
     hero-pulse 2.2s ease-in-out 1.6s infinite;
 }
 
+/* Transição ao trocar de etapa no formulário de orçamento. */
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.step-slide-in {
+  animation: step-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Entrada única do botão flutuante de WhatsApp. */
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-whatsapp {
+  animation: float-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
+}
+
+/* Modal de agradecimento após o envio do orçamento. */
+@keyframes modal-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.thank-you-backdrop {
+  animation: modal-backdrop-in 0.25s ease both;
+}
+
+.thank-you-panel {
+  animation: modal-panel-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 html {
   scroll-behavior: smooth;
 }

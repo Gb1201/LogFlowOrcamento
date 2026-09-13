@@ -3,8 +3,20 @@ import { Button } from './ui/Button'
 
 export function FinalCta() {
   return (
-    <section className="dark-surface bg-forest py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6 text-center lg:px-10">
+    <section className="dark-surface relative overflow-hidden bg-forest py-24 sm:py-32">
+      {/* Mesma textura sutil do Hero — fecha a composição visual entre
+          o início e o fim da página. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            'linear-gradient(var(--color-linen) 1px, transparent 1px), linear-gradient(90deg, var(--color-linen) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
+      />
+
+      <div className="relative mx-auto max-w-6xl px-6 text-center lg:px-10">
         <h2 className="font-display mx-auto max-w-2xl text-4xl font-semibold tracking-tight text-linen sm:text-5xl">
           Seu projeto merece um site
           <br />
@@ -15,9 +27,13 @@ export function FinalCta() {
           sem enrolação.
         </p>
         <div className="mt-10">
-          <Button href="#orcamento" variant="citron">
+          <Button href="#orcamento" variant="citron" className="group">
             Solicitar orçamento
-            <ArrowRight size={18} strokeWidth={2.25} />
+            <ArrowRight
+              size={18}
+              strokeWidth={2.25}
+              className="transition-transform duration-200 group-hover:translate-x-0.5"
+            />
           </Button>
         </div>
       </div>

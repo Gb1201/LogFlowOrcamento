@@ -51,7 +51,7 @@ export const SERVICES = [
 export const DIFFERENTIALS = [
   {
     title: 'Projeto sob medida',
-    description: 'Cada site é desenhado do zero para o seu contexto — sem templates reaproveitados.',
+    description: 'Cada site é desenhado do zero para o seu contexto, sem templates reaproveitados.',
   },
   {
     title: 'Design com identidade',

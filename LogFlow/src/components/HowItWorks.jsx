@@ -9,7 +9,7 @@ export function HowItWorks() {
             Do pedido ao site no ar
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-linen/70">
-            Um processo direto, sem etapas escondidas — cinco passos entre
+            Um processo direto, sem etapas escondidas, cinco passos entre
             sua solicitação e o projeto entregue.
           </p>
         </div>

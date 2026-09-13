@@ -4,6 +4,7 @@ import { BUDGET_RANGES, CONTACT, PROJECT_TYPES, TIMELINE_OPTIONS } from '../data
 import { isEmailJsConfigured, sendBudgetEmail } from '../lib/email'
 import { hasErrors, validateStep1, validateStep2 } from '../lib/validation'
 import { buildMailtoUrl, buildWhatsappUrl } from '../lib/whatsapp'
+import { ThankYouModal } from './ThankYouModal'
 import { Button } from './ui/Button'
 import { SelectField, TextAreaField, TextField } from './ui/FormField'
 
@@ -26,6 +27,7 @@ export function BudgetForm() {
   const [data, setData] = useState(INITIAL_DATA)
   const [errors, setErrors] = useState({})
   const [emailStatus, setEmailStatus] = useState('idle') // idle | sending | sent | error
+  const [thankYouChannel, setThankYouChannel] = useState(null) // null | 'whatsapp' | 'email'
 
   function updateField(field, value) {
     setData((prev) => ({ ...prev, [field]: value }))
@@ -48,11 +50,13 @@ export function BudgetForm() {
 
   function handleWhatsapp() {
     window.open(buildWhatsappUrl(data), '_blank', 'noopener,noreferrer')
+    setThankYouChannel('whatsapp')
   }
 
   async function handleEmail() {
     if (!isEmailJsConfigured) {
       window.location.href = buildMailtoUrl(data)
+      setThankYouChannel('email')
       return
     }
 
@@ -60,9 +64,19 @@ export function BudgetForm() {
     try {
       await sendBudgetEmail(data)
       setEmailStatus('sent')
+      setThankYouChannel('email')
     } catch {
       setEmailStatus('error')
     }
+  }
+
+  // Fecha o modal e deixa o formulário pronto para uma nova solicitação.
+  function closeThankYou() {
+    setThankYouChannel(null)
+    setStep(0)
+    setData(INITIAL_DATA)
+    setErrors({})
+    setEmailStatus('idle')
   }
 
   return (
@@ -97,20 +111,22 @@ export function BudgetForm() {
           </div>
 
           <div className="p-6 sm:p-10">
-            {step === 0 && (
-              <StepDados data={data} errors={errors} onChange={updateField} />
-            )}
-            {step === 1 && (
-              <StepProjeto data={data} errors={errors} onChange={updateField} />
-            )}
-            {step === 2 && (
-              <StepEnvio
-                data={data}
-                emailStatus={emailStatus}
-                onWhatsapp={handleWhatsapp}
-                onEmail={handleEmail}
-              />
-            )}
+            <div key={step} className="step-slide-in">
+              {step === 0 && (
+                <StepDados data={data} errors={errors} onChange={updateField} />
+              )}
+              {step === 1 && (
+                <StepProjeto data={data} errors={errors} onChange={updateField} />
+              )}
+              {step === 2 && (
+                <StepEnvio
+                  data={data}
+                  emailStatus={emailStatus}
+                  onWhatsapp={handleWhatsapp}
+                  onEmail={handleEmail}
+                />
+              )}
+            </div>
 
             <div className="mt-10 flex items-center justify-between">
               <button
@@ -124,15 +140,21 @@ export function BudgetForm() {
               </button>
 
               {step < STEPS.length - 1 && (
-                <Button variant="citron" onClick={goNext} type="button" className="px-6 py-3">
+                <Button variant="citron" onClick={goNext} type="button" className="group px-6 py-3">
                   Continuar
-                  <ArrowRight size={16} strokeWidth={2.25} />
+                  <ArrowRight
+                    size={16}
+                    strokeWidth={2.25}
+                    className="transition-transform duration-200 group-hover:translate-x-0.5"
+                  />
                 </Button>
               )}
             </div>
           </div>
         </div>
       </div>
+
+      <ThankYouModal channel={thankYouChannel} onClose={closeThankYou} />
     </section>
   )
 }

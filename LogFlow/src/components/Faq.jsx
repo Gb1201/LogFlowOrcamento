@@ -29,8 +29,13 @@ export function Faq() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center justify-between gap-6 py-6 text-left"
                 >
-                  <span className="font-display text-lg font-medium text-forest sm:text-xl">
-                    {item.question}
+                  <span className="flex items-baseline gap-4">
+                    <span className="font-mark text-sm text-pine/60">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="font-display text-lg font-medium text-forest sm:text-xl">
+                      {item.question}
+                    </span>
                   </span>
                   <Plus
                     size={20}
@@ -42,7 +47,7 @@ export function Faq() {
                   className={`grid overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
                 >
                   <div className="min-h-0">
-                    <p className="max-w-2xl pb-6 text-[15px] leading-relaxed text-forest/65">
+                    <p className="max-w-2xl pb-6 pl-[2.75rem] text-[15px] leading-relaxed text-forest/65">
                       {item.answer}
                     </p>
                   </div>

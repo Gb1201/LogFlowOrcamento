@@ -44,9 +44,13 @@ export function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button href="#orcamento" variant="citron">
+            <Button href="#orcamento" variant="citron" className="group">
               Solicitar orçamento
-              <ArrowRight size={18} strokeWidth={2.25} />
+              <ArrowRight
+                size={18}
+                strokeWidth={2.25}
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+              />
             </Button>
             <Button href="#processo" variant="outline">
               Ver como funciona
@@ -91,7 +95,7 @@ function SitePreviewPanel() {
           <span className="h-2.5 w-2.5 rounded-full bg-linen/15" />
           <span className="h-2.5 w-2.5 rounded-full bg-citron/70" />
           <span className="ml-2 flex-1 truncate rounded-[2px] bg-forest/60 px-3 py-1 text-[11px] text-linen/35">
-            seunegocio
+            seunegocio.vercel.app
           </span>
         </div>
 

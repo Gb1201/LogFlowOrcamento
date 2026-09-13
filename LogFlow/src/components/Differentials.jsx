@@ -1,5 +1,6 @@
 import { Code2, MessageCircle, Palette, Ruler, Smartphone, Zap } from 'lucide-react'
 import { DIFFERENTIALS } from '../data/content'
+import { BracketFrame } from './ui/BracketFrame'
 
 const ICONS = [Ruler, Palette, Smartphone, Zap, Code2, MessageCircle]
 
@@ -21,20 +22,19 @@ export function Differentials() {
           {DIFFERENTIALS.map((item, index) => {
             const Icon = ICONS[index]
             return (
-              <div
-                key={item.title}
-                className="flex flex-col gap-6 border border-linen/10 bg-forest/30 p-6 transition-colors duration-300 hover:border-citron/50 hover:bg-forest/50"
-              >
-                <Icon size={22} strokeWidth={1.75} className="text-citron" />
-                <div>
-                  <h3 className="font-display text-lg font-medium text-linen">
-                    {item.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-linen/60">
-                    {item.description}
-                  </p>
+              <BracketFrame key={item.title} tone="light" revealOnHover className="group">
+                <div className="flex h-full flex-col gap-6 border border-linen/10 bg-forest/30 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-citron/50 hover:bg-forest/50">
+                  <Icon size={22} strokeWidth={1.75} className="text-citron" />
+                  <div>
+                    <h3 className="font-display text-lg font-medium text-linen">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-linen/60">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </BracketFrame>
             )
           })}
         </div>

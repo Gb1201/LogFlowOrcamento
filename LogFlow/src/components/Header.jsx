@@ -7,12 +7,13 @@ const LINKS = [
   { href: '#servicos', label: 'Serviços' },
   { href: '#diferenciais', label: 'Diferenciais' },
   { href: '#processo', label: 'Como funciona' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '#faq', label: 'Perguntas' },
 ]
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeHref, setActiveHref] = useState('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -28,6 +29,26 @@ export function Header() {
     }
   }, [menuOpen])
 
+  // Destaca no menu a seção que está passando pelo meio da tela no momento.
+  useEffect(() => {
+    const sections = LINKS.map((link) => document.querySelector(link.href)).filter(Boolean)
+    if (sections.length === 0 || typeof IntersectionObserver === 'undefined') return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveHref(`#${entry.target.id}`)
+          }
+        }
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <header
       className={`dark-surface fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
@@ -40,15 +61,23 @@ export function Header() {
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navegação principal">
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[14.5px] text-linen/75 transition-colors hover:text-citron"
-            >
-              {link.label}
-            </a>
-          ))}
+          {LINKS.map((link) => {
+            const isActive = activeHref === link.href
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? 'true' : undefined}
+                className={`relative py-1 text-[14.5px] transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:bg-citron after:transition-all after:duration-300 ${
+                  isActive
+                    ? 'text-citron after:w-full'
+                    : 'text-linen/75 after:w-0 hover:text-citron hover:after:w-full'
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="hidden lg:block">
