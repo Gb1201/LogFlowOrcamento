@@ -10,8 +10,8 @@ export function Services() {
             Três formatos. Um único padrão de qualidade.
           </h2>
           <p className="mt-5 text-[17px] leading-relaxed text-forest/65">
-            Cada projeto começa do que ele precisa fazer, não de um pacote
-            fechado. Veja onde o seu se encaixa.
+            Desenvolvo a interface e a experiência visual do seu site em Front-end, com foco em apresentação, responsividade, navegação e conversão.
+            O serviço não inclui sistemas administrativos, áreas restritas, banco de dados ou regras de negócio próprias. Veja onde o seu se encaixa.
           </p>
         </div>
 
